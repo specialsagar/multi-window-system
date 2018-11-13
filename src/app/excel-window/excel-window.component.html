@@ -1,0 +1,11 @@
+<ul class="sp-section">
+  <li (click)="openSubsection(1)" [class.active]="active_number == 1"><a href="#">Section 1-3</a></li>
+  <li (click)="openSubsection(2)" [class.active]="active_number == 2"><a href="#">Section 1-1</a></li>
+  <li (click)="loadData3()" [class.active]="active_number == 3"><a href="#">Section 1-2</a></li>
+</ul>
+<ul class="sp-section sub-section" *ngIf="subSectionActive">
+  <li [class.active]='tab.is_active' (click)="loadSubData(tab.data)" *ngFor='let tab of subsections'>
+    <a href="#">{{tab.title}}</a>
+  </li>
+</ul>
+<hot-table [data]="data" [options]="options" #hot></hot-table>

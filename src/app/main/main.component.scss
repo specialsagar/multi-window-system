@@ -1,0 +1,50 @@
+.sp-section {
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+	li {
+		float: left;
+		a {
+			color: rgba(255, 255, 255, 1);
+			text-decoration: none;
+			padding: 10px 0 10px 55px;
+			background: rgba(165, 99, 13, 1);
+			position: relative;
+			display: block;
+			float: left;
+			&:before {
+				content: " ";
+				display: block;
+				width: 0;
+				height: 0;
+				border-top: 50px solid white;
+				border-bottom: 50px solid white;
+				border-left: 30px solid rgba(165, 99, 13, 1);
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+				left: 100%;
+				z-index: 1;
+			}
+			&:hover {
+				background: rgba(117, 70, 9, 1);
+				&::before {
+					border-left-color: rgba(117, 70, 9, 1) !important;
+				}
+			}
+		}
+		&:first-child a {
+			padding-left: 10px;
+		}
+		&:last-child a {
+			padding-right: 10px;
+			&:after {
+				border: 0;
+			}
+		}
+	}
+}
+
+.pad-10 {
+	padding: 10px;
+}
